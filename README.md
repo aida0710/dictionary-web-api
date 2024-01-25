@@ -9,3 +9,8 @@ googleの辞書APIって利用しすぎるとお金掛かりますよね。だ�
 
 部分検索の場合はmatchをambiguousに変更してください。<br/>
 例: `/api/dictionary/ambiguous?word=apple`
+
+## Todo
+
+1. [ ] indexページで検索出来るように
+2. [ ] 一致率検索を出来るように　例: `/api/dictionary/match?word=apple&match=0.5` 0.5は50%以上一致したものを返す
