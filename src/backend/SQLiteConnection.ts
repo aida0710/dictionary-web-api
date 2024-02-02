@@ -11,7 +11,7 @@ export class SQLiteConnection {
      */
     private async openDatabase(): Promise<void> {
         'use server';
-        const filePath: string = './public/database/dictionary.sqlite3';
+        const filePath: string = 'src/backend/database/dictionary.sqlite3';
 
         if (!SQLiteConnection.DictionaryDataBase) {
             fs.access(filePath, fs.constants.R_OK | fs.constants.W_OK, (err) => {
