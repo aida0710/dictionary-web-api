@@ -1,6 +1,5 @@
 import sqlite3 from 'sqlite3';
 import {Database, open} from 'sqlite';
-import fs from 'fs';
 
 export class SQLiteConnection {
     private static DictionaryDataBase: Database | null = null;
@@ -14,9 +13,6 @@ export class SQLiteConnection {
         const filePath: string = 'src/backend/database/dictionary.sqlite3';
 
         if (!SQLiteConnection.DictionaryDataBase) {
-            fs.access(filePath, fs.constants.R_OK | fs.constants.W_OK, (err) => {
-                if (err) throw new Error('Cannot access file for reading or writing: ' + err);
-            });
             SQLiteConnection.DictionaryDataBase = await open({
                 filename: filePath,
                 driver: sqlite3.Database,
